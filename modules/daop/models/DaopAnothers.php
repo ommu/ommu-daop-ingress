@@ -38,8 +38,8 @@
  * @property string $modified_id
  *
  * The followings are the available model relations:
- * @property OmmuDaopAnotherHistory[] $ommuDaopAnotherHistories
- * @property OmmuDaopAnotherUser[] $ommuDaopAnotherUsers
+ * @property DaopAnotherHistory[] $DaopAnotherHistories
+ * @property DaopAnotherUser[] $DaopAnotherUsers
  */
 class DaopAnothers extends CActiveRecord
 {
