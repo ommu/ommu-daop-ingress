@@ -61,7 +61,7 @@
 		<?php //begin.Filter City ?>
 		<div class="filter">
 			<span class="arrow"></span>
-			<?php $form=$this->beginWidget('application.components.system.OActiveForm', array(
+			<?php $form=$this->beginWidget('application.libraries.core.components.system.OActiveForm', array(
 				'id' => 'daop-users-form',
 				'method' => 'get',
 				'action' => Yii::app()->controller->createUrl('citysuggest'),
@@ -105,7 +105,7 @@
 		<div class="suggest">
 			<div class="filter">
 				<span class="arrow"></span>
-				<?php $form=$this->beginWidget('application.components.system.OActiveForm', array(
+				<?php $form=$this->beginWidget('application.libraries.core.components.system.OActiveForm', array(
 					'id' => 'daop-users-form',
 					'method' => 'get',
 					'action' => Yii::app()->controller->createUrl('anothersuggest'),
