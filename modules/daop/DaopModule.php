@@ -5,7 +5,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @copyright Copyright (c) 2017 Ommu Platform (opensource.ommu.co)
- * @link http://company.ommu.co
+ * @link https://github.com/ommu/ommu-daop-ingress
  * @contact (+62)856-299-4114
  *
  *----------------------------------------------------------------------------------------------------------
