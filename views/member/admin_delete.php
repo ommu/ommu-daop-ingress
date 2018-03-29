@@ -25,7 +25,7 @@
 )); ?>
 
 	<div class="dialog-content">
-		<?php echo Phrase::trans(172,0);?>	</div>
+		<?php echo Phrase::trans(172,0);?></div>
 	<div class="dialog-submit">
 		<?php echo CHtml::submitButton(Phrase::trans(173,0), array('onclick' => 'setEnableSave()')); ?>
 		<?php echo CHtml::button(Phrase::trans(174,0), array('id'=>'closed')); ?>

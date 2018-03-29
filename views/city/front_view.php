@@ -46,7 +46,7 @@
 			<li <?php echo ($action == 'another') ? 'class="active"' : '';?>><a off_address="" class="anothers" href="<?php echo Yii::app()->controller->createUrl('another',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="<?php echo $model->anothers?> Spesific Area">Spesific Area [<?php echo $model->anothers?>]</a></li>
 			<li class="last"><a href="<?php echo Yii::app()->controller->createUrl('update',array('id'=>$model->id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="Update Info">Update Info</a></li>
 		</ul>
-	</div>	
+	</div>
 </div>
 
 <div class="boxed">
@@ -54,7 +54,7 @@
 		<?php echo $model->city_desc;?>
 	</div>
 	
-	<div id="agents" class="box-contant">	
+	<div id="agents" class="box-contant">
 		<div class="list-view">
 			<?php if($action == 'member') {
 				echo '<div class="items">';
@@ -70,7 +70,7 @@
 		</div>
 	</div>
 	<div id="anothers" class="box-contant">
-		<div class="list-view">		
+		<div class="list-view">
 			<?php if($action == 'another') {
 				echo '<div class="items clearfix">';
 				echo $data;
@@ -82,6 +82,6 @@
 				echo '<div class="loader"></div>';
 				echo '</div>';
 			}?>
-		</div>	
+		</div>
 	</div>
 </div>
