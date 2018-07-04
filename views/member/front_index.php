@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  */
@@ -74,7 +74,7 @@
 						<?php echo $form->dropDownList($model,'province_id', OmmuZoneProvince::getProvince(72), array('prompt'=>'All Province'));?>
 					</div>
 					<div>
-						<?php echo $form->textField($model,'city_input',array('class'=>'span-5','placeholder'=>'Kota atau Kabupaten'));?>
+						<?php echo $form->textField($model,'city_input', array('class'=>'span-5','placeholder'=>'Kota atau Kabupaten'));?>
 					</div>
 					<?php echo CHtml::submitButton('Filter', array('onclick' => 'setEnableSave()')); ?>
 				</fieldset>
@@ -116,11 +116,11 @@
 					<fieldset>
 						<?php echo $form->dropDownList($another,'provinceId_search', OmmuZoneProvince::getProvince(72), array('prompt'=>'All Province'));?>
 						<?php echo $form->dropDownList($another,'cityId_search', OmmuZoneCity::getCity(), array('prompt'=>'All City'));?>
-						<?php echo $form->textField($another,'another_input',array('class'=>'span-5','placeholder'=>'Kelurahan, Kecamatan atau Nama Jalan'));?>
+						<?php echo $form->textField($another,'another_input', array('class'=>'span-5','placeholder'=>'Kelurahan, Kecamatan atau Nama Jalan'));?>
 						<?php echo CHtml::submitButton('Filter', array('onclick' => 'setEnableSave()')); ?>
 					</fieldset>
 					<fieldset>
-						<?php echo $form->textField($another,'another_input',array('class'=>'span-5','placeholder'=>'Kelurahan, Kecamatan atau Nama Jalan'));?>
+						<?php echo $form->textField($another,'another_input', array('class'=>'span-5','placeholder'=>'Kelurahan, Kecamatan atau Nama Jalan'));?>
 						<?php echo CHtml::submitButton('Filter', array('onclick' => 'setEnableSave()')); ?>
 					</fieldset>
 				<?php $this->endWidget(); ?>

@@ -6,7 +6,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  */
@@ -36,15 +36,15 @@
 		<div>
 			<a off_address="" class="photo" href="javascript:void(0);" title="Change Photo: <?php echo $model->city_relation->city?>"><img src="<?php echo $images;?>" alt="<?php echo $model->city_relation->city?>" /></a>
 			<h3><?php echo $model->city_relation->city?></h3>,
-			<a href="<?php echo Yii::app()->controller->createUrl('province/view',array('id'=>$model->city_relation->province->province_id,'t'=>Utility::getUrlTitle($model->city_relation->province->province)))?>" title="<?php echo $model->city_relation->province->province;?>"><?php echo $model->city_relation->province->province;?></a>, <?php echo $model->city_relation->province->country->country;?>
+			<a href="<?php echo Yii::app()->controller->createUrl('province/view', array('id'=>$model->city_relation->province->province_id,'t'=>Utility::getUrlTitle($model->city_relation->province->province)))?>" title="<?php echo $model->city_relation->province->province;?>"><?php echo $model->city_relation->province->province;?></a>, <?php echo $model->city_relation->province->country->country;?>
 		</div>
 	</div>
 	<div class="area-info">
 		<ul class="clearfix">
-			<li <?php echo ($action == 'view') ? 'class="active"' : '';?>><a off_address="" class="profile" href="<?php echo Yii::app()->controller->createUrl('view',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="Profile">Profile</a></li>
-			<li <?php echo ($action == 'member') ? 'class="active"' : '';?>><a off_address="" class="agents" href="<?php echo Yii::app()->controller->createUrl('member',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="<?php echo $model->users?> Agent">Agent [<?php echo $model->users?>]</a></li>
-			<li <?php echo ($action == 'another') ? 'class="active"' : '';?>><a off_address="" class="anothers" href="<?php echo Yii::app()->controller->createUrl('another',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="<?php echo $model->anothers?> Spesific Area">Spesific Area [<?php echo $model->anothers?>]</a></li>
-			<li class="last"><a href="<?php echo Yii::app()->controller->createUrl('update',array('id'=>$model->id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="Update Info">Update Info</a></li>
+			<li <?php echo ($action == 'view') ? 'class="active"' : '';?>><a off_address="" class="profile" href="<?php echo Yii::app()->controller->createUrl('view', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="Profile">Profile</a></li>
+			<li <?php echo ($action == 'member') ? 'class="active"' : '';?>><a off_address="" class="agents" href="<?php echo Yii::app()->controller->createUrl('member', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="<?php echo $model->users?> Agent">Agent [<?php echo $model->users?>]</a></li>
+			<li <?php echo ($action == 'another') ? 'class="active"' : '';?>><a off_address="" class="anothers" href="<?php echo Yii::app()->controller->createUrl('another', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="<?php echo $model->anothers?> Spesific Area">Spesific Area [<?php echo $model->anothers?>]</a></li>
+			<li class="last"><a href="<?php echo Yii::app()->controller->createUrl('update', array('id'=>$model->id,'t'=>Utility::getUrlTitle($model->city_relation->city)))?>" title="Update Info">Update Info</a></li>
 		</ul>
 	</div>
 </div>

@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  * This is the template for generating the model class of a specified table.
@@ -134,29 +134,29 @@ class DaopCity extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.id',$this->id,true);
-		if(isset($_GET['city'])) {
-			$criteria->compare('t.city_id',$_GET['city']);
+		$criteria->compare('t.id', $this->id,true);
+		if(Yii::app()->getRequest()->getParam('city')) {
+			$criteria->compare('t.city_id', Yii::app()->getRequest()->getParam('city'));
 		} else {
-			$criteria->compare('t.city_id',$this->city_id);
+			$criteria->compare('t.city_id', $this->city_id);
 		}
-		$criteria->compare('t.city_desc',$this->city_desc,true);
-		$criteria->compare('t.city_cover',$this->city_cover,true);
-		$criteria->compare('t.city_photo',$this->city_photo,true);
-		$criteria->compare('t.users',$this->users);
-		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.creation_date)',date('Y-m-d', strtotime($this->creation_date)));
-		if(isset($_GET['creation'])) {
-			$criteria->compare('t.creation_id',$_GET['creation']);
+		$criteria->compare('t.city_desc', $this->city_desc,true);
+		$criteria->compare('t.city_cover', $this->city_cover,true);
+		$criteria->compare('t.city_photo', $this->city_photo,true);
+		$criteria->compare('t.users', $this->users);
+		if($this->creation_date != null && !in_array($this->creation_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.creation_date)', date('Y-m-d', strtotime($this->creation_date)));
+		if(Yii::app()->getRequest()->getParam('creation')) {
+			$criteria->compare('t.creation_id', Yii::app()->getRequest()->getParam('creation'));
 		} else {
-			$criteria->compare('t.creation_id',$this->creation_id);
+			$criteria->compare('t.creation_id', $this->creation_id);
 		}
-		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.modified_date)',date('Y-m-d', strtotime($this->modified_date)));
-		if(isset($_GET['modified'])) {
-			$criteria->compare('t.modified_id',$_GET['modified']);
+		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.modified_date)', date('Y-m-d', strtotime($this->modified_date)));
+		if(Yii::app()->getRequest()->getParam('modified')) {
+			$criteria->compare('t.modified_id', Yii::app()->getRequest()->getParam('modified'));
 		} else {
-			$criteria->compare('t.modified_id',$this->modified_id);
+			$criteria->compare('t.modified_id', $this->modified_id);
 		}
 		
 		// Custom Search
@@ -174,11 +174,11 @@ class DaopCity extends CActiveRecord
 				'select'=>'displayname',
 			),
 		);
-		$criteria->compare('city_relation.city',strtolower($this->city_search), true);
-		$criteria->compare('creation_relation.displayname',strtolower($this->creation_search), true);
-		$criteria->compare('modified_relation.displayname',strtolower($this->modified_search), true);
+		$criteria->compare('city_relation.city', strtolower($this->city_search), true);
+		$criteria->compare('creation_relation.displayname', strtolower($this->creation_search), true);
+		$criteria->compare('modified_relation.displayname', strtolower($this->modified_search), true);
 
-		if(!isset($_GET['DaopCity_sort']))
+		if(!Yii::app()->getRequest()->getParam('DaopCity_sort'))
 			$criteria->order = 'id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -253,7 +253,7 @@ class DaopCity extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -284,7 +284,7 @@ class DaopCity extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -308,7 +308,7 @@ class DaopCity extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
  			if(count(explode(',', $column)) == 1)

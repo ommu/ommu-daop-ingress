@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  * This is the template for generating the model class of a specified table.
@@ -120,18 +120,18 @@ class DaopAnotherHistory extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.history_id',$this->history_id);
-		if(isset($_GET['another'])) {
-			$criteria->compare('t.another_id',$_GET['another']);
+		$criteria->compare('t.history_id', $this->history_id);
+		if(Yii::app()->getRequest()->getParam('another')) {
+			$criteria->compare('t.another_id', Yii::app()->getRequest()->getParam('another'));
 		} else {
-			$criteria->compare('t.another_id',$this->another_id);
+			$criteria->compare('t.another_id', $this->another_id);
 		}
-		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.modified_date)',date('Y-m-d', strtotime($this->modified_date)));
-		if(isset($_GET['modified'])) {
-			$criteria->compare('t.modified_id',$_GET['modified']);
+		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.modified_date)', date('Y-m-d', strtotime($this->modified_date)));
+		if(Yii::app()->getRequest()->getParam('modified')) {
+			$criteria->compare('t.modified_id', Yii::app()->getRequest()->getParam('modified'));
 		} else {
-			$criteria->compare('t.modified_id',$this->modified_id);
+			$criteria->compare('t.modified_id', $this->modified_id);
 		}
 		
 		// Custom Search
@@ -145,10 +145,10 @@ class DaopAnotherHistory extends CActiveRecord
 				'select'=>'displayname',
 			),
 		);
-		$criteria->compare('another_relation.another_name',strtolower($this->another_search), true);
-		$criteria->compare('modified_relation.displayname',strtolower($this->modified_search), true);
+		$criteria->compare('another_relation.another_name', strtolower($this->another_search), true);
+		$criteria->compare('modified_relation.displayname', strtolower($this->modified_search), true);
 
-		if(!isset($_GET['DaopAnotherHistory_sort']))
+		if(!Yii::app()->getRequest()->getParam('DaopAnotherHistory_sort'))
 			$criteria->order = 'history_id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -216,7 +216,7 @@ class DaopAnotherHistory extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -239,7 +239,7 @@ class DaopAnotherHistory extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
  			if(count(explode(',', $column)) == 1)

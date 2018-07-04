@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  */
@@ -20,27 +20,27 @@
 	<ul>
 		<li>
 			<?php echo $model->getAttributeLabel('id'); ?><br/>
-			<?php echo $form->textField($model,'id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'id', array('size'=>11,'maxlength'=>11)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('city_id'); ?><br/>
-			<?php echo $form->textField($model,'city_id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'city_id', array('size'=>11,'maxlength'=>11)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('city_desc'); ?><br/>
-			<?php echo $form->textArea($model,'city_desc',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'city_desc', array('rows'=>6, 'cols'=>50)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('city_cover'); ?><br/>
-			<?php echo $form->textField($model,'city_cover',array('size'=>60,'maxlength'=>64)); ?>
+			<?php echo $form->textField($model,'city_cover', array('size'=>60,'maxlength'=>64)); ?>
 		</li>
 
 		<li>
 			<?php echo $model->getAttributeLabel('city_photo'); ?><br/>
-			<?php echo $form->textField($model,'city_photo',array('size'=>60,'maxlength'=>64)); ?>
+			<?php echo $form->textField($model,'city_photo', array('size'=>60,'maxlength'=>64)); ?>
 		</li>
 
 		<li>
@@ -55,7 +55,7 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('creation_id'); ?><br/>
-			<?php echo $form->textField($model,'creation_id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'creation_id', array('size'=>11,'maxlength'=>11)); ?>
 		</li>
 
 		<li>
@@ -65,7 +65,7 @@
 
 		<li>
 			<?php echo $model->getAttributeLabel('modified_id'); ?><br/>
-			<?php echo $form->textField($model,'modified_id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'modified_id', array('size'=>11,'maxlength'=>11)); ?>
 		</li>
 
 		<li class="submit">

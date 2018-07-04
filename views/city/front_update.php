@@ -6,7 +6,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  */
@@ -35,7 +35,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'city_desc'); ?>
 		<div class="desc">
-			<?php echo $form->textArea($model,'city_desc',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'city_desc', array('rows'=>6, 'cols'=>50)); ?>
 			<?php echo $form->error($model,'city_desc'); ?>
 		</div>
 	</div>
@@ -52,7 +52,7 @@
 <div class="dialog-content">
 </div>
 <div class="dialog-submit">
-	<?php echo CHtml::submitButton($model->isNewRecord ? Phrase::trans(1,0) : Phrase::trans(2,0) ,array('onclick' => 'setEnableSave()')); ?>
+	<?php echo CHtml::submitButton($model->isNewRecord ? Phrase::trans(1,0) : Phrase::trans(2,0) , array('onclick' => 'setEnableSave()')); ?>
 	<?php echo CHtml::button(Phrase::trans(4,0), array('id'=>'closed')); ?>
 </div>
 */?>

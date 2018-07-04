@@ -21,7 +21,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2015 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2015 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  *----------------------------------------------------------------------------------------------------------
@@ -121,7 +121,7 @@ class r
 		$this->pageTitle = 'Operation Citys';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('front_index',array(
+		$this->render('front_index', array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
@@ -150,19 +150,19 @@ class r
 			array(
 				'type' => 1, 
 				'id' => '#daop-city .boxed #agents .list-view', 
-				'url' => Yii::app()->controller->createUrl('member',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
+				'url' => Yii::app()->controller->createUrl('member', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
 			),
 			array(
 				'type' => 1, 
 				'id' => '#daop-city .boxed #anothers .list-view', 
-				'url' => Yii::app()->controller->createUrl('another',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
+				'url' => Yii::app()->controller->createUrl('another', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
 			),
 		);
 
 		$this->pageTitle = $model->city_relation->city;
 		$this->pageDescription = Utility::shortText(Utility::hardDecode($model->city_desc),300);
 		$this->pageMeta = '';
-		$this->render('front_view',array(
+		$this->render('front_view', array(
 			'model'=>$model,
 		));
 	}
@@ -245,14 +245,14 @@ class r
 				array(
 					'type' => 1, 
 					'id' => '#daop-city .boxed #anothers .list-view', 
-					'url' => Yii::app()->controller->createUrl('another',array('id'=>$model->city_id, 't'=>Utility::getUrlTitle($model->city_relation->city))),
+					'url' => Yii::app()->controller->createUrl('another', array('id'=>$model->city_id, 't'=>Utility::getUrlTitle($model->city_relation->city))),
 				),
 			);
 		
 			$this->pageTitle = $model->city_relation->city.' Agent\'s';
 			$this->pageDescription = Utility::shortText(Utility::hardDecode($model->city_desc),300);
 			$this->pageMeta = '';
-			$this->render('front_view',array(
+			$this->render('front_view', array(
 				'model'=>$model,
 				'data'=>$data,
 				'pager'=>$pager,
@@ -340,13 +340,13 @@ class r
 				array(
 					'type' => 1, 
 					'id' => '#daop-city .boxed #agents .list-view', 
-					'url' => Yii::app()->controller->createUrl('member',array('id'=>$model->city_id, 't'=>Utility::getUrlTitle($model->city_relation->city))),
+					'url' => Yii::app()->controller->createUrl('member', array('id'=>$model->city_id, 't'=>Utility::getUrlTitle($model->city_relation->city))),
 				),
 			);
 			$this->pageTitle = $model->city_relation->city.' Specific Area\'s';
 			$this->pageDescription = Utility::shortText(Utility::hardDecode($model->city_desc),300);
 			$this->pageMeta = '';
-			$this->render('front_view',array(
+			$this->render('front_view', array(
 				'model'=>$model,
 				'data'=>$data,
 				'pager'=>$pager,
@@ -382,11 +382,11 @@ class r
 				echo $jsonError;
 
 			} else {
-				if(isset($_GET['enablesave']) && $_GET['enablesave'] == 1) {
+				if(Yii::app()->getRequest()->getParam('enablesave') == 1) {
 					if($model->save()) {
 						echo CJSON::encode(array(
 							'type' => 5,
-							'get' => Yii::app()->controller->createUrl('view',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
+							'get' => Yii::app()->controller->createUrl('view', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
 						));
 					} else {
 						print_r($model->getErrors());
@@ -397,12 +397,12 @@ class r
 			
 		} else {
 			$this->dialogDetail = true;
-			$this->dialogGroundUrl = Yii::app()->controller->createUrl('view',array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)));
+			$this->dialogGroundUrl = Yii::app()->controller->createUrl('view', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)));
 
 			$this->pageTitle = 'Update City Information: '.$model->city_relation->city;
 			$this->pageDescription = '';
 			$this->pageMeta = '';
-			$this->render('front_update',array(
+			$this->render('front_update', array(
 				'model'=>$model,
 			));
 		}
@@ -432,7 +432,7 @@ class r
 		$this->pageTitle = 'Operation City\'s Manage';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_manage',array(
+		$this->render('admin_manage', array(
 			'model'=>$model,
 			'columns' => $columns,
 		));
@@ -467,7 +467,7 @@ class r
 		$this->pageTitle = 'Operation City\'s Update';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_edit',array(
+		$this->render('admin_edit', array(
 			'model'=>$model,
 		));
 	}

@@ -7,7 +7,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  */
@@ -40,7 +40,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'another_name'); ?>
 		<div class="desc">
-			<?php echo $form->textField($model,'another_name',array('size'=>60,'maxlength'=>64)); ?>
+			<?php echo $form->textField($model,'another_name', array('size'=>60,'maxlength'=>64)); ?>
 			<?php echo $form->error($model,'another_name'); ?>
 			<?php /*<div class="small-px silent"></div>*/?>
 		</div>
@@ -49,7 +49,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'another_desc'); ?>
 		<div class="desc">
-			<?php echo $form->textArea($model,'another_desc',array('rows'=>6, 'cols'=>50)); ?>
+			<?php echo $form->textArea($model,'another_desc', array('rows'=>6, 'cols'=>50)); ?>
 			<?php echo $form->error($model,'another_desc'); ?>
 			<?php /*<div class="small-px silent"></div>*/?>
 		</div>
@@ -58,7 +58,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'another_cover'); ?>
 		<div class="desc">
-			<?php echo $form->textField($model,'another_cover',array('size'=>60,'maxlength'=>64)); ?>
+			<?php echo $form->textField($model,'another_cover', array('size'=>60,'maxlength'=>64)); ?>
 			<?php echo $form->error($model,'another_cover'); ?>
 			<?php /*<div class="small-px silent"></div>*/?>
 		</div>
@@ -67,7 +67,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'another_photo'); ?>
 		<div class="desc">
-			<?php echo $form->textField($model,'another_photo',array('size'=>60,'maxlength'=>64)); ?>
+			<?php echo $form->textField($model,'another_photo', array('size'=>60,'maxlength'=>64)); ?>
 			<?php echo $form->error($model,'another_photo'); ?>
 			<?php /*<div class="small-px silent"></div>*/?>
 		</div>
@@ -94,7 +94,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'city_id'); ?>
 		<div class="desc">
-			<?php echo $form->textField($model,'city_id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'city_id', array('size'=>11,'maxlength'=>11)); ?>
 			<?php echo $form->error($model,'city_id'); ?>
 			<?php /*<div class="small-px silent"></div>*/?>
 		</div>
@@ -121,7 +121,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'creation_id'); ?>
 		<div class="desc">
-			<?php echo $form->textField($model,'creation_id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'creation_id', array('size'=>11,'maxlength'=>11)); ?>
 			<?php echo $form->error($model,'creation_id'); ?>
 			<?php /*<div class="small-px silent"></div>*/?>
 		</div>
@@ -139,7 +139,7 @@
 	<div class="clearfix">
 		<?php echo $form->labelEx($model,'modified_id'); ?>
 		<div class="desc">
-			<?php echo $form->textField($model,'modified_id',array('size'=>11,'maxlength'=>11)); ?>
+			<?php echo $form->textField($model,'modified_id', array('size'=>11,'maxlength'=>11)); ?>
 			<?php echo $form->error($model,'modified_id'); ?>
 			<?php /*<div class="small-px silent"></div>*/?>
 		</div>
@@ -157,7 +157,7 @@
 <div class="dialog-content">
 </div>
 <div class="dialog-submit">
-	<?php echo CHtml::submitButton($model->isNewRecord ? Phrase::trans(1,0) : Phrase::trans(2,0) ,array('onclick' => 'setEnableSave()')); ?>
+	<?php echo CHtml::submitButton($model->isNewRecord ? Phrase::trans(1,0) : Phrase::trans(2,0) , array('onclick' => 'setEnableSave()')); ?>
 	<?php echo CHtml::button(Phrase::trans(4,0), array('id'=>'closed')); ?>
 </div>
 */?>

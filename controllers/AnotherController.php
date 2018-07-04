@@ -19,7 +19,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2015 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2015 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  *----------------------------------------------------------------------------------------------------------
@@ -115,7 +115,7 @@ class AnotherController extends Controller
 		$this->pageTitle = 'Specific Area in City';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('front_index',array(
+		$this->render('front_index', array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
@@ -136,7 +136,7 @@ class AnotherController extends Controller
 		$this->pageTitle = $model->another_name;
 		$this->pageDescription = Utility::shortText(Utility::hardDecode($model->another_desc),300);
 		$this->pageMeta = '';
-		$this->render('front_view',array(
+		$this->render('front_view', array(
 			'model'=>$model,
 		));
 	}	
@@ -165,7 +165,7 @@ class AnotherController extends Controller
 		$this->pageTitle = 'Daop Anothers Manage';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_manage',array(
+		$this->render('admin_manage', array(
 			'model'=>$model,
 			'columns' => $columns,
 		));
@@ -199,7 +199,7 @@ class AnotherController extends Controller
 		$this->pageTitle = 'Specific City Create';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_add',array(
+		$this->render('admin_add', array(
 			'model'=>$model,
 		));
 	}
@@ -233,7 +233,7 @@ class AnotherController extends Controller
 		$this->pageTitle = 'Specific City Update';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_edit',array(
+		$this->render('admin_edit', array(
 			'model'=>$model,
 		));
 	}

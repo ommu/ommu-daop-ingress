@@ -6,7 +6,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  */
@@ -22,11 +22,11 @@ if($render == 1) {
 ?>
 	<div class="sep">
 		<div class="img">
-			<a href="<?php echo Yii::app()->controller->createUrl('cityadd',array('id'=>$data->city_id,'t'=>Utility::getUrlTitle($data->city)))?>" title="Add Daop: <?php echo $data->city?>">Add</a>
+			<a href="<?php echo Yii::app()->controller->createUrl('cityadd', array('id'=>$data->city_id,'t'=>Utility::getUrlTitle($data->city)))?>" title="Add Daop: <?php echo $data->city?>">Add</a>
 			<img src="<?php echo $images;?>" alt="<?php echo $data->city?>" />
 		</div>
 		<div>
-			<a href="<?php echo Yii::app()->controller->createUrl('city/view',array('id'=>$data->city_id,'t'=>Utility::getUrlTitle($data->city)))?>" title="<?php echo $data->city?>, [<?php echo $model != null ? $model->users : 0;?> Agent]"><?php echo $title?></a>
+			<a href="<?php echo Yii::app()->controller->createUrl('city/view', array('id'=>$data->city_id,'t'=>Utility::getUrlTitle($data->city)))?>" title="<?php echo $data->city?>, [<?php echo $model != null ? $model->users : 0;?> Agent]"><?php echo $title?></a>
 		</div>
 	</div>
 	

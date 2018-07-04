@@ -21,7 +21,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2015 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2015 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  *----------------------------------------------------------------------------------------------------------
@@ -357,7 +357,7 @@ class MemberController extends Controller
 	 */
 	public function actionAnotherSuggest($limit=10) 
 	{
-		//if(Yii::app()->request->isAjaxRequest && isset($_GET['term'])) {
+		//if(Yii::app()->request->isAjaxRequest && Yii::app()->getRequest()->getParam('term')) {
 			/*
 			$criteria = new CDbCriteria;
 			$criteria->join = 'LEFT JOIN `ommu_daop_another_user` `b` ON `t`.`another_id`=`b`.`another_id` AND `b`.`user_id`=:user';
@@ -367,7 +367,7 @@ class MemberController extends Controller
 			$criteria->order = 'another_name ASC';
 			$criteria->params = array(
 				':user' => Yii::app()->user->id,
-				':another' => '%' . strtolower($_GET['term']) . '%'
+				':another' => '%' . strtolower(Yii::app()->getRequest()->getParam('term')) . '%'
 			);
 			$model = DaopAnothers::model()->findAll($criteria);
 
@@ -376,7 +376,7 @@ class MemberController extends Controller
 					$result[] = array('id' => $items->another_id, 'value' => $items->another_name);
 				}
 			} else {
-				$result[] = array('id' => 0, 'value' => $_GET['term']);
+				$result[] = array('id' => 0, 'value' => Yii::app()->getRequest()->getParam('term'));
 			}
 			echo CJSON::encode($result);
 			Yii::app()->end();
@@ -559,7 +559,7 @@ class MemberController extends Controller
 		$this->pageTitle = 'User Operation Area Manage';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_manage',array(
+		$this->render('admin_manage', array(
 			'model'=>$model,
 			'columns' => $columns,
 		));

@@ -18,7 +18,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2015 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2015 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  *----------------------------------------------------------------------------------------------------------
@@ -144,7 +144,7 @@ class ProvinceController extends Controller
 			$this->pageTitle = 'Operation Provincies';
 			$this->pageDescription = '';
 			$this->pageMeta = '';
-			$this->render('front_index',array(
+			$this->render('front_index', array(
 				'data'=>$data,
 				'pager'=>$pager,
 				'summaryPager'=>$summaryPager,
@@ -175,7 +175,7 @@ class ProvinceController extends Controller
 		$this->pageTitle = $model->province_relation->province;
 		$this->pageDescription = Utility::shortText(Utility::hardDecode($model->province_desc),300);
 		$this->pageMeta = '';
-		$this->render('front_view',array(
+		$this->render('front_view', array(
 			'model'=>$model,
 		));
 	}	
@@ -204,7 +204,7 @@ class ProvinceController extends Controller
 		$this->pageTitle = 'Daop Provinces Manage';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_manage',array(
+		$this->render('admin_manage', array(
 			'model'=>$model,
 			'columns' => $columns,
 		));
@@ -239,7 +239,7 @@ class ProvinceController extends Controller
 		$this->pageTitle = 'Update Daop Provinces';
 		$this->pageDescription = '';
 		$this->pageMeta = '';
-		$this->render('admin_edit',array(
+		$this->render('admin_edit', array(
 			'model'=>$model,
 		));
 	}

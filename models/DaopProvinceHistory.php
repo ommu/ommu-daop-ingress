@@ -4,7 +4,7 @@
  *
  * @author Putra Sudaryanto <putra@sudaryanto.id>
  * @contact (+62)856-299-4114
- * @copyright Copyright (c) 2014 Ommu Platform (opensource.ommu.co)
+ * @copyright Copyright (c) 2014 Ommu Platform (www.ommu.co)
  * @link https://github.com/ommu/ommu-daop-ingress
  *
  * This is the template for generating the model class of a specified table.
@@ -118,21 +118,21 @@ class DaopProvinceHistory extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('t.history_id',$this->history_id,true);
-		if(isset($_GET['province'])) {
-			$criteria->compare('t.province_id',$_GET['province']);
+		$criteria->compare('t.history_id', $this->history_id,true);
+		if(Yii::app()->getRequest()->getParam('province')) {
+			$criteria->compare('t.province_id', Yii::app()->getRequest()->getParam('province'));
 		} else {
-			$criteria->compare('t.province_id',$this->province_id);
+			$criteria->compare('t.province_id', $this->province_id);
 		}
-		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00', '0000-00-00')))
-			$criteria->compare('date(t.modified_date)',date('Y-m-d', strtotime($this->modified_date)));
-		if(isset($_GET['modified'])) {
-			$criteria->compare('t.modified_id',$_GET['modified']);
+		if($this->modified_date != null && !in_array($this->modified_date, array('0000-00-00 00:00:00','1970-01-01 00:00:00','0002-12-02 07:07:12','-0001-11-30 00:00:00')))
+			$criteria->compare('date(t.modified_date)', date('Y-m-d', strtotime($this->modified_date)));
+		if(Yii::app()->getRequest()->getParam('modified')) {
+			$criteria->compare('t.modified_id', Yii::app()->getRequest()->getParam('modified'));
 		} else {
-			$criteria->compare('t.modified_id',$this->modified_id);
+			$criteria->compare('t.modified_id', $this->modified_id);
 		}
 
-		if(!isset($_GET['DaopProvinceHistory_sort']))
+		if(!Yii::app()->getRequest()->getParam('DaopProvinceHistory_sort'))
 			$criteria->order = 'history_id DESC';
 
 		return new CActiveDataProvider($this, array(
@@ -200,7 +200,7 @@ class DaopProvinceHistory extends CActiveRecord
 					),
 					'options'=>array(
 						'showOn' => 'focus',
-						'dateFormat' => 'dd-mm-yy',
+						'dateFormat' => 'yy-mm-dd',
 						'showOtherMonths' => true,
 						'selectOtherMonths' => true,
 						'changeMonth' => true,
@@ -223,7 +223,7 @@ class DaopProvinceHistory extends CActiveRecord
 	public static function getInfo($id, $column=null)
 	{
 		if($column != null) {
-			$model = self::model()->findByPk($id,array(
+			$model = self::model()->findByPk($id, array(
 				'select' => $column,
 			));
  			if(count(explode(',', $column)) == 1)
