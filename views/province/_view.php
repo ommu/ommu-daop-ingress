@@ -27,9 +27,9 @@
 
 <div class="sep">
 	<?php /*
-	<a class="photo" href="<?php echo Yii::app()->controller->createUrl('view', array('id'=>$data->province_id,'t'=>Utility::getUrlTitle($data->province_relation->province)))?>" title="<?php echo $data->province_relation->province;?>"><img src="<?php echo $images;?>" alt="<?php echo $data->province_relation->province;?>"/></a>
+	<a class="photo" href="<?php echo Yii::app()->controller->createUrl('view', array('id'=>$data->province_id,'t'=>$this->urlTitle($data->province_relation->province)))?>" title="<?php echo $data->province_relation->province;?>"><img src="<?php echo $images;?>" alt="<?php echo $data->province_relation->province;?>"/></a>
 	*/?>
-	<a class="title" href="<?php echo Yii::app()->controller->createUrl('view', array('id'=>$data->province_id,'t'=>Utility::getUrlTitle($data->province_relation->province)))?>" title="<?php echo $data->province_relation->province;?>"><?php echo $data->province_relation->province;?></a>
+	<a class="title" href="<?php echo Yii::app()->controller->createUrl('view', array('id'=>$data->province_id,'t'=>$this->urlTitle($data->province_relation->province)))?>" title="<?php echo $data->province_relation->province;?>"><?php echo $data->province_relation->province;?></a>
 	<div>
 		<a href="" title="<?php echo $city;?> City"><?php echo $city;?> City</a> / 
 		<a href="" title="<?php echo $data->users;?> Agent"><?php echo $data->users;?> Agent</a>

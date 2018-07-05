@@ -19,7 +19,7 @@
 
 <div class="sep"><div class="invers">
 	<div class="photo">
-		<a href="<?php echo Yii::app()->controller->createUrl('view', array('id'=>$data->city_id,'t'=>Utility::getUrlTitle($data->city_relation->city)))?>" title=""><img src="<?php echo $images;?>" alt=""></a>
+		<a href="<?php echo Yii::app()->controller->createUrl('view', array('id'=>$data->city_id,'t'=>$this->urlTitle($data->city_relation->city)))?>" title=""><img src="<?php echo $images;?>" alt=""></a>
 	</div>
 	<?php echo $data->users;?>,
 	<?php echo $data->city_relation->city;?>,

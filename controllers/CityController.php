@@ -150,12 +150,12 @@ class r
 			array(
 				'type' => 1, 
 				'id' => '#daop-city .boxed #agents .list-view', 
-				'url' => Yii::app()->controller->createUrl('member', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
+				'url' => Yii::app()->controller->createUrl('member', array('id'=>$model->city_id,'t'=>$this->urlTitle($model->city_relation->city))),
 			),
 			array(
 				'type' => 1, 
 				'id' => '#daop-city .boxed #anothers .list-view', 
-				'url' => Yii::app()->controller->createUrl('another', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
+				'url' => Yii::app()->controller->createUrl('another', array('id'=>$model->city_id,'t'=>$this->urlTitle($model->city_relation->city))),
 			),
 		);
 
@@ -245,7 +245,7 @@ class r
 				array(
 					'type' => 1, 
 					'id' => '#daop-city .boxed #anothers .list-view', 
-					'url' => Yii::app()->controller->createUrl('another', array('id'=>$model->city_id, 't'=>Utility::getUrlTitle($model->city_relation->city))),
+					'url' => Yii::app()->controller->createUrl('another', array('id'=>$model->city_id, 't'=>$this->urlTitle($model->city_relation->city))),
 				),
 			);
 		
@@ -340,7 +340,7 @@ class r
 				array(
 					'type' => 1, 
 					'id' => '#daop-city .boxed #agents .list-view', 
-					'url' => Yii::app()->controller->createUrl('member', array('id'=>$model->city_id, 't'=>Utility::getUrlTitle($model->city_relation->city))),
+					'url' => Yii::app()->controller->createUrl('member', array('id'=>$model->city_id, 't'=>$this->urlTitle($model->city_relation->city))),
 				),
 			);
 			$this->pageTitle = $model->city_relation->city.' Specific Area\'s';
@@ -386,7 +386,7 @@ class r
 					if($model->save()) {
 						echo CJSON::encode(array(
 							'type' => 5,
-							'get' => Yii::app()->controller->createUrl('view', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city))),
+							'get' => Yii::app()->controller->createUrl('view', array('id'=>$model->city_id,'t'=>$this->urlTitle($model->city_relation->city))),
 						));
 					} else {
 						print_r($model->getErrors());
@@ -397,7 +397,7 @@ class r
 			
 		} else {
 			$this->dialogDetail = true;
-			$this->dialogGroundUrl = Yii::app()->controller->createUrl('view', array('id'=>$model->city_id,'t'=>Utility::getUrlTitle($model->city_relation->city)));
+			$this->dialogGroundUrl = Yii::app()->controller->createUrl('view', array('id'=>$model->city_id,'t'=>$this->urlTitle($model->city_relation->city)));
 
 			$this->pageTitle = 'Update City Information: '.$model->city_relation->city;
 			$this->pageDescription = '';

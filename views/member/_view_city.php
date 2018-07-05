@@ -23,11 +23,11 @@ if($render == 1) {
 
 	<div class="sep">
 		<div class="img">
-			<a href="<?php echo Yii::app()->controller->createUrl('citydrop', array('id'=>$data->daop_id,'t'=>Utility::getUrlTitle($data->city_relation->city)))?>" title="Drop: <?php echo $data->city_relation->city?>">Drop</a>
+			<a href="<?php echo Yii::app()->controller->createUrl('citydrop', array('id'=>$data->daop_id,'t'=>$this->urlTitle($data->city_relation->city)))?>" title="Drop: <?php echo $data->city_relation->city?>">Drop</a>
 			<img src="<?php echo $images;?>" alt="<?php echo $data->city_relation->city?>" />
 		</div>
 		<div>
-			<a href="<?php echo Yii::app()->controller->createUrl('city/view', array('id'=>$data->city_id,'t'=>Utility::getUrlTitle($data->city_relation->city)))?>" title="<?php echo $data->city_relation->city?>, [<?php echo $model->users?> Agent]"><?php echo $title?></a>
+			<a href="<?php echo Yii::app()->controller->createUrl('city/view', array('id'=>$data->city_id,'t'=>$this->urlTitle($data->city_relation->city)))?>" title="<?php echo $data->city_relation->city?>, [<?php echo $model->users?> Agent]"><?php echo $title?></a>
 			<span><?php echo Utility::dateFormat($data->creation_date, true);?></span>
 		</div>
 	</div>

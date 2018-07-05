@@ -24,10 +24,10 @@ if($render == 1) {
 
 	<div class="sep">
 		<div class="img">
-			<a href="<?php echo Yii::app()->controller->createUrl('anotherdrop', array('id'=>$data->id,'t'=>Utility::getUrlTitle($data->another_relation->another_name)))?>" title="Drop: <?php echo $title?>">Drop</a>
+			<a href="<?php echo Yii::app()->controller->createUrl('anotherdrop', array('id'=>$data->id,'t'=>$this->urlTitle($data->another_relation->another_name)))?>" title="Drop: <?php echo $title?>">Drop</a>
 			<img src="<?php echo $images;?>" alt="<?php echo $title;?>" />
 		</div>
-		<a href="<?php echo Yii::app()->controller->createUrl('another/view', array('id'=>$data->another_id,'t'=>Utility::getUrlTitle($title)))?>" title="<?php echo $title.' ['.$data->another_relation->users.' Agent]';?>"><?php echo $title;?></a>
+		<a href="<?php echo Yii::app()->controller->createUrl('another/view', array('id'=>$data->another_id,'t'=>$this->urlTitle($title)))?>" title="<?php echo $title.' ['.$data->another_relation->users.' Agent]';?>"><?php echo $title;?></a>
 	</div>
 	
 <?php } else {?>
