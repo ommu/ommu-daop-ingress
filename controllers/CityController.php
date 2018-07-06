@@ -43,7 +43,7 @@ class r
 	public function init() 
 	{
 		if(!Yii::app()->user->isGuest) {
-			$arrThemes = Utility::getCurrentTemplate('admin');
+			$arrThemes = $this->currentTemplate('admin');
 			Yii::app()->theme = $arrThemes['folder'];
 			$this->layout = $arrThemes['layout'];
 		} else {
@@ -103,10 +103,10 @@ class r
 	 */
 	public function actionIndex() 
 	{
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 
 		$criteria=new CDbCriteria;
 		$criteria->order = 'creation_date DESC';
@@ -132,10 +132,10 @@ class r
 	 */
 	public function actionView($id) 
 	{
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 		
 		$model = DaopCity::model()->find(array(
 			//'select'=>'folder, layout',
@@ -173,10 +173,10 @@ class r
 	 */
 	public function actionMember($id) 
 	{
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 		
 		$model = DaopCity::model()->find(array(
 			//'select'=>'folder, layout',
@@ -268,10 +268,10 @@ class r
 	 */
 	public function actionAnother($id) 
 	{
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 		
 		$model = DaopCity::model()->find(array(
 			//'select'=>'folder, layout',
@@ -363,10 +363,10 @@ class r
 	 */
 	public function actionUpdate($id) 
 	{
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 		
 		$model=$this->loadModel($id);
 

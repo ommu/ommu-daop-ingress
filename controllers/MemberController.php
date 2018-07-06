@@ -43,7 +43,7 @@ class MemberController extends Controller
 	public function init() 
 	{
 		if(!Yii::app()->user->isGuest) {
-			$arrThemes = Utility::getCurrentTemplate('admin');
+			$arrThemes = $this->currentTemplate('admin');
 			Yii::app()->theme = $arrThemes['folder'];
 			$this->layout = $arrThemes['layout'];
 		} else {
@@ -105,10 +105,10 @@ class MemberController extends Controller
 		$model=new DaopUsers;
 		$another=new DaopAnotherUser;
 		
-		$arrThemes = Utility::getCurrentTemplate('public');
+		$arrThemes = $this->currentTemplate('public');
 		Yii::app()->theme = $arrThemes['folder'];
 		$this->layout = $arrThemes['layout'];
-		Utility::applyCurrentTheme($this->module);
+		$this->applyCurrentTheme($this->module);
 		
 		$this->contentOther = true;
 		$this->contentAttribute=array(
