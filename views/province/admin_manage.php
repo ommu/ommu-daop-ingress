@@ -70,24 +70,25 @@
 				'buttons' => array(
 					'view' => array(
 						'label' => 'view',
-						'options' => array(							
+						'imageUrl' => Yii::app()->params['grid-view']['buttonImageUrl'],
+						'options' => array(
 							'class' => 'view',
-							'off_address' => '',
-							'target' => '_blank',
 						),
-						'url' => 'Yii::app()->controller->createUrl("site/view", array("id"=>$data->primaryKey))'),
+						'url' => 'Yii::app()->controller->createUrl("site/view", array(\'id\'=>$data->primaryKey))'),
 					'update' => array(
 						'label' => 'update',
+						'imageUrl' => Yii::app()->params['grid-view']['buttonImageUrl'],
 						'options' => array(
-							'class' => 'update'
+							'class' => 'update',
 						),
-						'url' => 'Yii::app()->controller->createUrl("edit", array("id"=>$data->primaryKey))'),
+						'url' => 'Yii::app()->controller->createUrl(\'edit\', array(\'id\'=>$data->primaryKey))'),
 					'delete' => array(
 						'label' => 'delete',
+						'imageUrl' => Yii::app()->params['grid-view']['buttonImageUrl'],
 						'options' => array(
-							'class' => 'delete'
+							'class' => 'delete',
 						),
-						'url' => 'Yii::app()->controller->createUrl("delete", array("id"=>$data->primaryKey))')
+						'url' => 'Yii::app()->controller->createUrl(\'delete\', array(\'id\'=>$data->primaryKey))')
 				),
 				'template' => '{view}|{update}|{delete}',
 			));
@@ -96,8 +97,9 @@
 				'id'=>'daop-province-grid',
 				'dataProvider'=>$model->search(),
 				'filter'=>$model,
-				'columns' => $columnData,
-				'pager' => array('header' => ''),
+				'columns'=>$columnData,
+				'template'=>Yii::app()->params['grid-view']['gridTemplate'],
+				'pager'=>array('header'=>''),
 			));
 		?>
 		<?php //end.Grid Item ?>
