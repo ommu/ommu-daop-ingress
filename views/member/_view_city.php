@@ -28,7 +28,7 @@ if($render == 1) {
 		</div>
 		<div>
 			<a href="<?php echo Yii::app()->controller->createUrl('city/view', array('id'=>$data->city_id,'t'=>$this->urlTitle($data->city_relation->city)))?>" title="<?php echo $data->city_relation->city?>, [<?php echo $model->users?> Agent]"><?php echo $title?></a>
-			<span><?php echo Utility::dateFormat($data->creation_date, true);?></span>
+			<span><?php echo $this->dateFormat($data->creation_date, true);?></span>
 		</div>
 	</div>
 	
