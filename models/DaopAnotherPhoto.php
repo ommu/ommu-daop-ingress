@@ -232,7 +232,7 @@ class DaopAnotherPhoto extends CActiveRecord
 			);
 			$this->defaultColumns[] = array(
 				'name' => 'modified_date',
-				'value' => 'Utility::dateFormat($data->modified_date)',
+				'value' => 'Yii::app()->dateFormatter->formatDateTime($data->modified_date, \'medium\', false)',
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
