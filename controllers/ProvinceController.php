@@ -186,7 +186,7 @@ class ProvinceController extends Controller
 	public function actionManage() 
 	{
 		$model=new DaopProvince('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['DaopProvince'])) {
 			$model->attributes=$_GET['DaopProvince'];
 		}

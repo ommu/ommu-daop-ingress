@@ -686,7 +686,7 @@ class MemberController extends Controller
 	public function actionManage() 
 	{
 		$model=new DaopUsers('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['DaopUsers'])) {
 			$model->attributes=$_GET['DaopUsers'];
 		}

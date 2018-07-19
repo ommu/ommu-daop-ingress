@@ -414,7 +414,7 @@ class r
 	public function actionManage() 
 	{
 		$model=new DaopCity('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['DaopCity'])) {
 			$model->attributes=$_GET['DaopCity'];
 		}

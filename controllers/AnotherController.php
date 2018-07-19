@@ -147,7 +147,7 @@ class AnotherController extends Controller
 	public function actionManage() 
 	{
 		$model=new DaopAnothers('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();	// clear any default values
 		if(isset($_GET['DaopAnothers'])) {
 			$model->attributes=$_GET['DaopAnothers'];
 		}
