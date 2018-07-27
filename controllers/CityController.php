@@ -138,7 +138,7 @@ class r
 		$this->applyCurrentTheme($this->module);
 		
 		$model = DaopCity::model()->find(array(
-			//'select'=>'folder, layout',
+			//'select' => 'folder, layout',
 			'condition' => 'city_id = :id',
 			'params' => array(
 				':id' => $id,
@@ -179,7 +179,7 @@ class r
 		$this->applyCurrentTheme($this->module);
 		
 		$model = DaopCity::model()->find(array(
-			//'select'=>'folder, layout',
+			//'select' => 'folder, layout',
 			'condition' => 'city_id = :id',
 			'params' => array(
 				':id' => $id,
@@ -274,7 +274,7 @@ class r
 		$this->applyCurrentTheme($this->module);
 		
 		$model = DaopCity::model()->find(array(
-			//'select'=>'folder, layout',
+			//'select' => 'folder, layout',
 			'condition' => 'city_id = :id',
 			'params' => array(
 				':id' => $id,

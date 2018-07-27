@@ -147,12 +147,12 @@ class DaopAnotherUser extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'another_relation' => array(
-				'alias'=>'another_relation',
-				'select'=>'another_name, province_id, city_id',
+				'alias' => 'another_relation',
+				'select' => 'another_name, province_id, city_id',
 			),
 			'user_relation' => array(
-				'alias'=>'user_relation',
-				'select'=>'displayname',
+				'alias' => 'user_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('another_relation.province_id', strtolower($this->provinceId_search), true);

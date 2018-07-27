@@ -199,20 +199,20 @@ class DaopAnothers extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'province_relation' => array(
-				'alias'=>'province_relation',
-				'select'=>'province',
+				'alias' => 'province_relation',
+				'select' => 'province',
 			),
 			'city_relation' => array(
-				'alias'=>'city_relation',
-				'select'=>'city',
+				'alias' => 'city_relation',
+				'select' => 'city',
 			),
 			'creation_relation' => array(
-				'alias'=>'creation_relation',
-				'select'=>'displayname',
+				'alias' => 'creation_relation',
+				'select' => 'displayname',
 			),
 			'modified_relation' => array(
-				'alias'=>'modified_relation',
-				'select'=>'displayname',
+				'alias' => 'modified_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('province_relation.province', strtolower($this->province_search), true);
@@ -321,7 +321,7 @@ class DaopAnothers extends CActiveRecord
 				'htmlOptions' => array(
 					'class' => 'center',
 				),
-				'filter'=>array(
+				'filter' =>array(
 					0=>'Request',
 					1=>'Approve',
 					2=>'Blocked',

@@ -139,12 +139,12 @@ class DaopAnotherHistory extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'another_relation' => array(
-				'alias'=>'another_relation',
-				'select'=>'another_name',
+				'alias' => 'another_relation',
+				'select' => 'another_name',
 			),
 			'modified_relation' => array(
-				'alias'=>'modified_relation',
-				'select'=>'displayname',
+				'alias' => 'modified_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('another_relation.another_name', strtolower($this->another_search), true);

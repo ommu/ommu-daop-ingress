@@ -17,7 +17,7 @@
 	else
 		$images = Utility::getTimThumb(Yii::app()->request->baseUrl.'/public/daop/city/'.$data->province_photo, 80, 80, 1);
 	$city = DaopUsers::model()->count(array(
-		//'select'=>'folder, layout',
+		//'select' => 'folder, layout',
 		'condition' => 'province_id = :id',
 		'params' => array(
 			':id' => $data->province_id,

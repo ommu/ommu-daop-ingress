@@ -160,16 +160,16 @@ class DaopUsers extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'province_relation' => array(
-				'alias'=>'province_relation',
-				'select'=>'province',
+				'alias' => 'province_relation',
+				'select' => 'province',
 			),
 			'city_relation' => array(
-				'alias'=>'city_relation',
-				'select'=>'city',
+				'alias' => 'city_relation',
+				'select' => 'city',
 			),
 			'user_relation' => array(
-				'alias'=>'user_relation',
-				'select'=>'displayname',
+				'alias' => 'user_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('province_relation.province', strtolower($this->province_search), true);

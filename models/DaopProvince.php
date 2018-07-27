@@ -164,16 +164,16 @@ class DaopProvince extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'province_relation' => array(
-				'alias'=>'province_relation',
-				'select'=>'province',
+				'alias' => 'province_relation',
+				'select' => 'province',
 			),
 			'creation_relation' => array(
-				'alias'=>'creation_relation',
-				'select'=>'displayname',
+				'alias' => 'creation_relation',
+				'select' => 'displayname',
 			),
 			'modified_relation' => array(
-				'alias'=>'modified_relation',
-				'select'=>'displayname',
+				'alias' => 'modified_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('province_relation.province', strtolower($this->province_search), true);

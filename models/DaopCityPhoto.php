@@ -153,12 +153,12 @@ class DaopCityPhoto extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'city_relation' => array(
-				'alias'=>'city_relation',
-				'select'=>'city',
+				'alias' => 'city_relation',
+				'select' => 'city',
 			),
 			'modified_relation' => array(
-				'alias'=>'modified_relation',
-				'select'=>'displayname',
+				'alias' => 'modified_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('city_relation.city', strtolower($this->city_search), true);
@@ -245,7 +245,7 @@ class DaopCityPhoto extends CActiveRecord
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
-					'filter'=>array(
+					'filter' =>array(
 						1=>Phrase::trans(588,0),
 						0=>Phrase::trans(589,0),
 					),

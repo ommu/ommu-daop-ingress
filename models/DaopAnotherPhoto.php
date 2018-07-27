@@ -153,12 +153,12 @@ class DaopAnotherPhoto extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'another_relation' => array(
-				'alias'=>'another_relation',
-				'select'=>'another_name',
+				'alias' => 'another_relation',
+				'select' => 'another_name',
 			),
 			'modified_relation' => array(
-				'alias'=>'modified_relation',
-				'select'=>'displayname',
+				'alias' => 'modified_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('another_relation.another_name', strtolower($this->another_search), true);
@@ -245,7 +245,7 @@ class DaopAnotherPhoto extends CActiveRecord
 					'htmlOptions' => array(
 						'class' => 'center',
 					),
-					'filter'=>array(
+					'filter' =>array(
 						1=>Phrase::trans(588,0),
 						0=>Phrase::trans(589,0),
 					),

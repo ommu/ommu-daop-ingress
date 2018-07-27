@@ -164,16 +164,16 @@ class DaopCity extends CActiveRecord
 		// Custom Search
 		$criteria->with = array(
 			'city_relation' => array(
-				'alias'=>'city_relation',
-				'select'=>'city',
+				'alias' => 'city_relation',
+				'select' => 'city',
 			),
 			'creation_relation' => array(
-				'alias'=>'creation_relation',
-				'select'=>'displayname',
+				'alias' => 'creation_relation',
+				'select' => 'displayname',
 			),
 			'modified_relation' => array(
-				'alias'=>'modified_relation',
-				'select'=>'displayname',
+				'alias' => 'modified_relation',
+				'select' => 'displayname',
 			),
 		);
 		$criteria->compare('city_relation.city', strtolower($this->city_search), true);

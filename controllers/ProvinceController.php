@@ -165,7 +165,7 @@ class ProvinceController extends Controller
 		$this->applyCurrentTheme($this->module);
 		
 		$model = DaopProvince::model()->find(array(
-			//'select'=>'folder, layout',
+			//'select' => 'folder, layout',
 			'condition' => 'province_id = :id',
 			'params' => array(
 				':id' => $id,
