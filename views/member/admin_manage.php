@@ -66,7 +66,7 @@
 			$columnData   = $columns;
 			array_push($columnData, array(
 				'header' => Phrase::trans(151,0),
-				'class'=>'CButtonColumn',
+				'class' => 'CButtonColumn',
 				'buttons' => array(
 					'view' => array(
 						'label' => 'view',
