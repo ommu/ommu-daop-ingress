@@ -13,7 +13,7 @@
 
 	$this->breadcrumbs=array(
 		'Daop Anothers'=>array('manage'),
-		'Create',
+		Yii::t('phrase', 'Create'),
 	);
 ?>
 

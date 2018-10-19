@@ -14,14 +14,13 @@
 	$this->breadcrumbs=array(
 		'Daop Cities'=>array('manage'),
 		$model->id=>array('view','id'=>$model->id),
-		'Update',
+		Yii::t('phrase', 'Update'),
 	);
 ?>
 
 <?php $form=$this->beginWidget('application.libraries.yii-traits.system.OActiveForm', array(
 	'id'=>'daop-city-form',
 	'enableAjaxValidation'=>true,
-	//'htmlOptions' => array('enctype' => 'multipart/form-data')
 )); ?>
 
 <?php //begin.Messages ?>

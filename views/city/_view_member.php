@@ -17,14 +17,14 @@
 		'condition' => 'user_id = :id',
 		'params' => array(
 			':id' => $data->user_id,
-		),		
+		),
 	));
 	$another = DaopAnotherUser::model()->count(array(
 		//'select' => 'folder, layout',
 		'condition' => 'user_id = :id',
 		'params' => array(
 			':id' => $data->user_id,
-		),		
+		),
 	));
 	
 ?>

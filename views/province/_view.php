@@ -21,7 +21,7 @@
 		'condition' => 'province_id = :id',
 		'params' => array(
 			':id' => $data->province_id,
-		),		
+		),
 	)); 
 ?>
 

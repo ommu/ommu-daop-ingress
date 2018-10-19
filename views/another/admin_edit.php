@@ -14,7 +14,7 @@
 	$this->breadcrumbs=array(
 		'Daop Anothers'=>array('manage'),
 		$model->another_id=>array('view','id'=>$model->another_id),
-		'Update',
+		Yii::t('phrase', 'Update'),
 	);
 ?>
 
